@@ -1,28 +1,45 @@
-# SuperDiagnosticTool
+# SuperDiagnosticTool — website
 
-A responsive, single-page website for SuperDiagnosticTool, with a cream-and-blue visual theme and subtle interface animations.
+Marketing site for [SuperDiagnosticTool](https://github.com/Guettaf-hossam/SuperDiagnosticTool), a free, open-source Windows diagnostic and remediation tool with AI-assisted analysis and reviewable PowerShell repairs.
 
-## Project structure
+This version fuses two designs:
 
-```text
-SuperDiagnosticTool-Website/
-├── index.html      # Complete website (HTML, CSS, JavaScript, and embedded image)
-├── README.md       # Project and deployment instructions
-└── .nojekyll       # Prevents GitHub Pages from applying Jekyll processing
+- **Cinematic shell** — floating glass nav, full-viewport ferrofluid hero, iridescent type, glossy pill buttons, bento cards and ambient video sections.
+- **Original single-page site** — the interactive canvas wordmark (drag or tap a letter), the telemetry signal map, the CPU-core grid, the Quick / Deep / Complete mode switcher, the pixel-icon "What it scans" row and the pixel logo mark.
+
+## Stack
+
+React 19, TypeScript, Vite and Tailwind CSS v4. All copy and links live in `src/data/site.ts`.
+
+## Develop
+
+```sh
+npm install
+npm run dev
 ```
 
-## Run locally
+## Build
 
-No build tools or package installation are required.
+```sh
+npm run build   # outputs to dist/
+```
 
-1. Download or extract this folder.
-2. Open `index.html` in a modern browser.
+## Deploy
 
-The Google Fonts stylesheet may require an internet connection. The page itself has no local asset folders or build step; its image is embedded in the HTML.
+`.github/workflows/deploy.yml` builds and publishes `dist/` to GitHub Pages on every push to `main`.
+In **Settings → Pages**, set **Source** to **GitHub Actions**.
 
-## Notes
+## Media
 
-- The site is static and does not require Node.js, Python, a backend, or a build command.
-- Existing page interactions and scripts are kept inside `index.html`.
-- The original project links and attribution shown in the page have been preserved.
-- Review the original project's license and permissions before redistributing or modifying it publicly.
+Binary assets live in `public/`:
+
+```text
+public/brand/favicon.png
+public/brand/icon-160.webp
+public/brand/screenshot-main.webp
+public/media/ferrofluid-hero.mp4   + .webp poster
+public/media/fluid-safety.mp4      + .webp poster
+public/media/ocean-closing.mp4     + .webp poster
+```
+
+The previous single-file site is preserved in this repository's history.
